@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:38:06.259171",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "subcontracting_out_challan",
+  "item_code",
+  "purchase_order",
+  "column_break_nxhb",
+  "subcontracting_out_quantity",
+  "item_name",
+  "subcontracting_operation",
+  "column_break_sgba",
+  "returned_quantity",
+  "quantity",
+  "reference_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "subcontracting_out_challan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontracting Out Challan",
+   "options": "Subcontracting Out"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "purchase_order",
+   "fieldtype": "Link",
+   "label": "Purchase Order",
+   "options": "Purchase Order"
+  },
+  {
+   "fieldname": "column_break_nxhb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subcontracting_out_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Subcontracting Out Quantity"
+  },
+  {
+   "fetch_from": "raw_item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "subcontracting_operation",
+   "fieldtype": "Link",
+   "label": "Subcontracting Operation",
+   "options": "Subcontracting Operations"
+  },
+  {
+   "fieldname": "column_break_sgba",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "returned_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Returned Quantity"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "reference_id",
+   "fieldtype": "Data",
+   "label": "Reference Id"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:38:19.457907",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting In Bifurcation Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

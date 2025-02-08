@@ -227,3 +227,29 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "doctype": "Stock Entry Type",
+        "filters": [
+            ["name", "in", ["Subcontracting In Transfer","Subcontracting In Manufacture", "Subcontracting Out Send to Subcontractor", "Job Work In Receipt"]],
+        ],
+    },
+    {
+        "doctype": "Subcontracting Rejection Type",
+        "filters": [
+            ["name", "in", ["SRT001","SRT002","SRT003","SRT004","SRT005","SRT006","SRT007","SRT008","SRT009","SRT010","SRT011","SRT012","SRT013","SRT014","SRT015","SRT016"]],
+        ],
+    },
+    {
+        "doctype": "Server Script",
+        "filters": [
+            ["name", "in", ["Add Default BOM", "Sales Order Filters"]],
+        ],
+    },
+    {
+        "doctype": "Client Script",
+        "filters": [
+            ["name", "in", ["Default Service Item On PO For Subcontracting", "Job Work Customization On Sales Order"]],
+        ],
+    }
+]

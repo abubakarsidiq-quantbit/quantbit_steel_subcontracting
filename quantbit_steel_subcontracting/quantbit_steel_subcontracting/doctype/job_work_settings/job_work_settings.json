@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company",
+ "creation": "2025-02-05 11:27:38.123138",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "job_work_in_target_warehouse",
+  "sales_order_section",
+  "default_service_item",
+  "column_break_ahho",
+  "default_service_item_name",
+  "column_break_cvlw",
+  "default_service_item_uom"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "job_work_in_target_warehouse",
+   "fieldtype": "Link",
+   "label": "Job Work In Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "sales_order_section",
+   "fieldtype": "Section Break",
+   "label": "Sales Order"
+  },
+  {
+   "fieldname": "default_service_item",
+   "fieldtype": "Link",
+   "label": "Default Service Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_ahho",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "default_service_item.item_name",
+   "fieldname": "default_service_item_name",
+   "fieldtype": "Data",
+   "label": "Default Service Item Name"
+  },
+  {
+   "fieldname": "column_break_cvlw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "default_service_item.stock_uom",
+   "fieldname": "default_service_item_uom",
+   "fieldtype": "Link",
+   "label": "Default Service Item UOM",
+   "options": "UOM"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-05 11:30:56.880495",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Job Work Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

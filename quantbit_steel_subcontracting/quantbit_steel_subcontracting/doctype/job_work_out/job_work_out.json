@@ -1,0 +1,425 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:JWO-{###}",
+ "creation": "2025-02-05 12:28:14.301169",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "subcontracting_details_tab",
+  "section_break_jzlx",
+  "column_break_wzun",
+  "customer",
+  "customer_name",
+  "column_break_ptxu",
+  "posting_date",
+  "job_work_out_from",
+  "posting_time",
+  "column_break_ygvp",
+  "source_warehouse",
+  "target_warehouse",
+  "column_break_rllc",
+  "company",
+  "job_work_type",
+  "section_break_rumk",
+  "job_work_out_finished_item_details",
+  "get_in_challan",
+  "job_work_in_item_details",
+  "job_work_out_raw_items_details",
+  "job_work_out_rejection_reason",
+  "job_work_out_raw_item_details",
+  "bifurcation_details_tab",
+  "subcontracting_in_bifurcation_section",
+  "job_work_out_bifurcation_details",
+  "addition_cost_for_manufacturing_section",
+  "account",
+  "column_break_ebrb",
+  "description",
+  "tab_4_tab",
+  "customer_address_section",
+  "customer_address",
+  "customer_gstin",
+  "gst_category",
+  "place_of_supply",
+  "column_break_fkeo",
+  "customer_address_details",
+  "shipping_address_section",
+  "shipping_address",
+  "column_break_ykjv",
+  "shipping_address_details",
+  "company_address_section",
+  "company_address",
+  "company_gstin",
+  "column_break_hbdg",
+  "company_address_details",
+  "other_info_tab",
+  "vehicle_details_section",
+  "transporter",
+  "customer_challan_number",
+  "column_break_arwo",
+  "gate_number",
+  "supplier_challan_date",
+  "column_break_pnuu",
+  "vehicle_number",
+  "section_break_nait",
+  "additional_remark",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Job Work Out",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "subcontracting_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Job Work Details"
+  },
+  {
+   "fieldname": "section_break_jzlx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_wzun",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_ptxu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date"
+  },
+  {
+   "fieldname": "job_work_out_from",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Job Work Out From",
+   "options": "\nFoundry\nMachining",
+   "reqd": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "hidden": 1,
+   "label": "Posting Time"
+  },
+  {
+   "fieldname": "column_break_ygvp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "supplier_id.custom_subcontracting_warehouse",
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rllc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_work_type",
+   "fieldtype": "Select",
+   "label": "Job work Type",
+   "options": "\nSEZ\nNon SEZ",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.job_work_out_from == 'Foundry' || doc.job_work_out_from == 'Machining';",
+   "fieldname": "section_break_rumk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "job_work_out_finished_item_details",
+   "fieldtype": "Table",
+   "label": "Job Work Out Finished Item Details",
+   "options": "Job Work Out Finished Item Details"
+  },
+  {
+   "fieldname": "get_in_challan",
+   "fieldtype": "Button",
+   "label": "Get In Challan"
+  },
+  {
+   "fieldname": "job_work_in_item_details",
+   "fieldtype": "Table",
+   "label": "Job Work In Item Details",
+   "options": "Job Work In Item Details"
+  },
+  {
+   "fieldname": "job_work_out_raw_items_details",
+   "fieldtype": "Table",
+   "label": "Job Work Out Raw Items Details",
+   "options": "Job Work Out Raw Items Details"
+  },
+  {
+   "fieldname": "job_work_out_rejection_reason",
+   "fieldtype": "Table",
+   "label": "Job Work Out Rejection Reason",
+   "options": "Job Work Out Rejection Reason"
+  },
+  {
+   "fieldname": "job_work_out_raw_item_details",
+   "fieldtype": "Table",
+   "label": "Job Work Out Raw Item Details",
+   "options": "Job Work Out Raw Item Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bifurcation_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Bifurcation Details"
+  },
+  {
+   "fieldname": "subcontracting_in_bifurcation_section",
+   "fieldtype": "Section Break",
+   "label": "Job Work Out Bifurcation"
+  },
+  {
+   "fieldname": "job_work_out_bifurcation_details",
+   "fieldtype": "Table",
+   "label": "Job Work Out Bifurcation Details",
+   "options": "Job Work Out Bifurcation Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "addition_cost_for_manufacturing_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Addition Cost For Manufacturing "
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_ebrb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "tab_4_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address Details"
+  },
+  {
+   "fieldname": "customer_address_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Address"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "customer_address.gstin",
+   "fieldname": "customer_gstin",
+   "fieldtype": "Data",
+   "label": "Customer GSTIN"
+  },
+  {
+   "fetch_from": "customer_address.gst_category",
+   "fieldname": "gst_category",
+   "fieldtype": "Data",
+   "label": "GST Category"
+  },
+  {
+   "fieldname": "place_of_supply",
+   "fieldtype": "Autocomplete",
+   "label": "Place Of Supply",
+   "options": "01-Jammu and Kashmir\n02-Himachal Pradesh\n03-Punjab\n04-Chandigarh\n05-Uttarakhand\n06-Haryana\n07-Delhi\n08-Rajasthan\n09-Uttar Pradesh\n10-Bihar\n11-Sikkim\n12-Arunachal Pradesh\n13-Nagaland\n14-Manipur\n15-Mizoram\n16-Tripura\n17-Meghalaya\n18-Assam\n19-West Bengal\n20-Jharkhand\n21-Odisha\n22-Chhattisgarh\n23-Madhya Pradesh\n24-Gujarat\n26-Dadra and Nagar Haveli and Daman and Diu\n27-Maharashtra\n29-Karnataka\n30-Goa\n31-Lakshadweep Islands\n32-Kerala\n33-Tamil Nadu\n34-Puducherry\n35-Andaman and Nicobar Islands\n36-Telangana\n37-Andhra Pradesh\n38-Ladakh\n96-Other Countries\n97-Other Territory"
+  },
+  {
+   "fieldname": "column_break_fkeo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_address_details",
+   "fieldtype": "Text Editor",
+   "label": "Customer Address Details"
+  },
+  {
+   "fieldname": "shipping_address_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Address"
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_ykjv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_address_details",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address Details"
+  },
+  {
+   "fieldname": "company_address_section",
+   "fieldtype": "Section Break",
+   "label": "Company Address"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Link",
+   "label": "Company Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "company_address.gstin",
+   "fieldname": "company_gstin",
+   "fieldtype": "Data",
+   "label": "Company GSTIN"
+  },
+  {
+   "fieldname": "column_break_hbdg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_address_details",
+   "fieldtype": "Text Editor",
+   "label": "Company Address Details"
+  },
+  {
+   "fieldname": "other_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other Info"
+  },
+  {
+   "fieldname": "vehicle_details_section",
+   "fieldtype": "Section Break",
+   "label": "Vehicle Details"
+  },
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "label": "Transporter",
+   "link_filters": "[[\"Supplier\",\"is_transporter\",\"=\",1]]",
+   "options": "Supplier"
+  },
+  {
+   "fieldname": "customer_challan_number",
+   "fieldtype": "Data",
+   "label": "Customer Challan Number"
+  },
+  {
+   "fieldname": "column_break_arwo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gate_number",
+   "fieldtype": "Data",
+   "label": "Gate Number"
+  },
+  {
+   "fieldname": "supplier_challan_date",
+   "fieldtype": "Date",
+   "label": "Supplier Challan Date"
+  },
+  {
+   "fieldname": "column_break_pnuu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fieldname": "section_break_nait",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "additional_remark",
+   "fieldtype": "Text Editor",
+   "label": "Additional Remark"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Delivery Note",
+   "link_fieldname": "custom_job_work_out"
+  }
+ ],
+ "modified": "2025-02-06 13:09:47.656722",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Job Work Out",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

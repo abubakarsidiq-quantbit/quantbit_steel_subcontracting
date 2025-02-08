@@ -1,0 +1,38 @@
+[
+ {
+  "add_to_transit": 0,
+  "docstatus": 0,
+  "doctype": "Stock Entry Type",
+  "is_standard": 0,
+  "modified": "2025-01-06 15:12:27.084746",
+  "name": "Subcontracting In Transfer",
+  "purpose": "Material Transfer"
+ },
+ {
+  "add_to_transit": 0,
+  "docstatus": 0,
+  "doctype": "Stock Entry Type",
+  "is_standard": 0,
+  "modified": "2025-01-06 15:12:08.478935",
+  "name": "Subcontracting In Manufacture",
+  "purpose": "Manufacture"
+ },
+ {
+  "add_to_transit": 0,
+  "docstatus": 0,
+  "doctype": "Stock Entry Type",
+  "is_standard": 0,
+  "modified": "2025-01-06 15:05:42.731424",
+  "name": "Job Work In Receipt",
+  "purpose": "Material Receipt"
+ },
+ {
+  "add_to_transit": 0,
+  "docstatus": 0,
+  "doctype": "Stock Entry Type",
+  "is_standard": 0,
+  "modified": "2025-01-06 15:07:04.605530",
+  "name": "Subcontracting Out Send to Subcontractor",
+  "purpose": "Send to Subcontractor"
+ }
+]

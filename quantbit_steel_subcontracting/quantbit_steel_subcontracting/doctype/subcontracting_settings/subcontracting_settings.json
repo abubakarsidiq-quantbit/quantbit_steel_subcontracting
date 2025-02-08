@@ -1,0 +1,136 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company",
+ "creation": "2025-02-06 11:20:57.734384",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_fkhw",
+  "gst_itc_4_rate",
+  "column_break_uzjm",
+  "gst_itc_rate_applicable",
+  "purchase_order_section",
+  "default_service_item",
+  "column_break_jkex",
+  "default_service_item_name",
+  "column_break_ltbb",
+  "default_service_item_uom",
+  "addition_cost_for_manufacturing_section",
+  "account",
+  "column_break_rcit",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_fkhw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "gst_itc_4_rate",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "GST ITC 4 Rate"
+  },
+  {
+   "fieldname": "column_break_uzjm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "gst_itc_rate_applicable",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "GST ITC 4 Rate Applicable"
+  },
+  {
+   "fieldname": "purchase_order_section",
+   "fieldtype": "Section Break",
+   "label": "Purchase Order"
+  },
+  {
+   "fieldname": "default_service_item",
+   "fieldtype": "Link",
+   "label": "Default Service Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_jkex",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "default_service_item.item_name",
+   "fieldname": "default_service_item_name",
+   "fieldtype": "Data",
+   "label": "Default Service Item Name"
+  },
+  {
+   "fieldname": "column_break_ltbb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "default_service_item.stock_uom",
+   "fieldname": "default_service_item_uom",
+   "fieldtype": "Link",
+   "label": "Default Service Item UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "addition_cost_for_manufacturing_section",
+   "fieldtype": "Section Break",
+   "label": "Addition Cost For Manufacturing "
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account",
+   "options": "Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_rcit",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-06 11:21:20.626615",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting Settings",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,277 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:35:08.497565",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "column_break_xwwj",
+  "type_of_goods",
+  "uom",
+  "column_break_d31h",
+  "weight_per_unit",
+  "subcon_weight",
+  "column_break_fcjp",
+  "subcontracting_product_mix",
+  "is_subcontracting_product_mix",
+  "section_break_uvos",
+  "ok_qty",
+  "ok_weight",
+  "ok_subcon",
+  "column_break_ixtk",
+  "cr_qty",
+  "cr_weight",
+  "cr_subcon",
+  "column_break_bfyy",
+  "mr_qty",
+  "mr_weight",
+  "mr_subcon",
+  "column_break_zsdn",
+  "rw_qty",
+  "rw_weight",
+  "rw_subcon",
+  "column_break_eevb",
+  "as_it_is_qty",
+  "as_it_is_weight",
+  "as_it_is_subcon",
+  "column_break_ywgt",
+  "other_qty",
+  "other_weight",
+  "other_subcon"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "column_break_xwwj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type_of_goods",
+   "fieldtype": "Select",
+   "label": "Type Of Goods",
+   "options": "\nInput\nCapital Goods"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_fcjp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subcontracting_product_mix",
+   "fieldtype": "Link",
+   "label": "Subcontracting Product Mix",
+   "options": "Subcontracting Product Mix",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_subcontracting_product_mix",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Is Subcontracting Product Mix"
+  },
+  {
+   "fieldname": "section_break_uvos",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "ok_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "OK Qty"
+  },
+  {
+   "fieldname": "column_break_ixtk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cr_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "CR Qty"
+  },
+  {
+   "fieldname": "column_break_bfyy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mr_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "MR Qty"
+  },
+  {
+   "fieldname": "column_break_zsdn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rw_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "RW Qty"
+  },
+  {
+   "fieldname": "column_break_eevb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "as_it_is_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "AS IT IS Qty"
+  },
+  {
+   "fieldname": "column_break_ywgt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "other_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Other Qty"
+  },
+  {
+   "fieldname": "column_break_d31h",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight_per_unit",
+   "fieldtype": "Float",
+   "label": "Weight Per Unit",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "subcon_weight",
+   "fieldtype": "Float",
+   "label": "Subcontracting Weight",
+   "precision": "3"
+  },
+  {
+   "fieldname": "ok_weight",
+   "fieldtype": "Float",
+   "label": "Ok Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "ok_subcon",
+   "fieldtype": "Float",
+   "label": "Ok Subcontracting Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cr_weight",
+   "fieldtype": "Float",
+   "label": "CR Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mr_weight",
+   "fieldtype": "Float",
+   "label": "MR Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rw_weight",
+   "fieldtype": "Float",
+   "label": "RW Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "as_it_is_weight",
+   "fieldtype": "Float",
+   "label": "AS IT IS Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_weight",
+   "fieldtype": "Float",
+   "label": "Other Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cr_subcon",
+   "fieldtype": "Float",
+   "label": "CR Subcontracting Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mr_subcon",
+   "fieldtype": "Float",
+   "label": " MR Subcontracting Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rw_subcon",
+   "fieldtype": "Float",
+   "label": " RW Subcontracting Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "as_it_is_subcon",
+   "fieldtype": "Float",
+   "label": " AS IT IS Subcontracting Weight",
+   "precision": "3",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other_subcon",
+   "fieldtype": "Float",
+   "label": "Other Subcontracting Weight",
+   "precision": "3",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-07 12:15:35.443235",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting In Finished Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

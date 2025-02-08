@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-07 16:19:52.360725",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "rejection_type_name",
+  "rejection_warehouse",
+  "job_work_field",
+  "column_break_zxol",
+  "company",
+  "consider_operation_rate_for_finished_item",
+  "is_as_it_is"
+ ],
+ "fields": [
+  {
+   "fieldname": "rejection_type_name",
+   "fieldtype": "Data",
+   "label": "Rejection Type Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "rejection_warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Rejection Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_work_field",
+   "fieldtype": "Data",
+   "label": "Job Work Field",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_zxol",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "default": "0",
+   "fieldname": "consider_operation_rate_for_finished_item",
+   "fieldtype": "Check",
+   "label": "Consider Operation Rate For Finished Item"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval: doc.is_ok == 0;",
+   "fieldname": "is_as_it_is",
+   "fieldtype": "Check",
+   "label": "Is As It Is"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-02-07 16:20:12.614152",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Job Work Rejection Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

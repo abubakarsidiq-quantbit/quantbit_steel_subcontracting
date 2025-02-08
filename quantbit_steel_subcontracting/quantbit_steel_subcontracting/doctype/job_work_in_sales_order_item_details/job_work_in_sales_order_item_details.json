@@ -1,0 +1,293 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:02:25.005079",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_details_section",
+  "sales_order",
+  "item_code",
+  "item_name",
+  "hsnsac",
+  "column_break_dfqu",
+  "quantity",
+  "uom",
+  "weight_per_unit",
+  "total_weight",
+  "column_break_zywf",
+  "tem_description",
+  "types_of_goods",
+  "raw_item_description_section",
+  "job_work_operation",
+  "pattern_master",
+  "column_break_qung",
+  "rate",
+  "amount",
+  "column_break_seju",
+  "target_warehouse",
+  "returned_quantity",
+  "gst_details_section",
+  "item_tax_template",
+  "column_break_pvkr",
+  "gst_rate",
+  "section_break_aimu",
+  "igst_rate",
+  "igst_amount",
+  "column_break_wtes",
+  "cgst_rate",
+  "cgst_amount",
+  "column_break_agiz",
+  "sgst_rate",
+  "sgst_amount",
+  "column_break_yjbz",
+  "cess_rate",
+  "cess_amount",
+  "column_break_yemk",
+  "cess_non_advol_rate",
+  "cess_non_advol_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_details_section",
+   "fieldtype": "Section Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "columns": 2,
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name"
+  },
+  {
+   "fetch_from": "item_code.gst_hsn_code",
+   "fetch_if_empty": 1,
+   "fieldname": "hsnsac",
+   "fieldtype": "Link",
+   "label": "HSN/SAC",
+   "options": "GST HSN Code"
+  },
+  {
+   "fieldname": "column_break_dfqu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "item_code.weight_uom",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fetch_from": "item_code.weight_per_unit",
+   "fieldname": "weight_per_unit",
+   "fieldtype": "Float",
+   "label": "Weight Per Unit"
+  },
+  {
+   "fieldname": "total_weight",
+   "fieldtype": "Float",
+   "label": "Total Weight"
+  },
+  {
+   "fieldname": "column_break_zywf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_code.description",
+   "fetch_if_empty": 1,
+   "fieldname": "tem_description",
+   "fieldtype": "Small Text",
+   "label": "Item Description"
+  },
+  {
+   "fieldname": "types_of_goods",
+   "fieldtype": "Select",
+   "label": "Types of Goods",
+   "options": "\nInput\nCapital Goods"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "raw_item_description_section",
+   "fieldtype": "Section Break",
+   "label": "Other Details"
+  },
+  {
+   "fieldname": "job_work_operation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Job Work Operation",
+   "options": "Job Work Operations"
+  },
+  {
+   "depends_on": "eval: parent.job_work_for == \"Foundry\";",
+   "fieldname": "pattern_master",
+   "fieldtype": "Link",
+   "label": "Pattern Master",
+   "options": "Subcontracting Product Mix",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_qung",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rate",
+   "fieldtype": "Float",
+   "label": "Rate"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "column_break_seju",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "returned_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Returned Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gst_details_section",
+   "fieldtype": "Section Break",
+   "label": "GST Details"
+  },
+  {
+   "fieldname": "item_tax_template",
+   "fieldtype": "Link",
+   "label": "Item Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "column_break_pvkr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_tax_template.gst_rate",
+   "fieldname": "gst_rate",
+   "fieldtype": "Float",
+   "label": "GST Rate"
+  },
+  {
+   "fieldname": "section_break_aimu",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "igst_rate",
+   "fieldtype": "Float",
+   "label": "IGST Rate"
+  },
+  {
+   "fieldname": "igst_amount",
+   "fieldtype": "Float",
+   "label": "IGST Amount"
+  },
+  {
+   "fieldname": "column_break_wtes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cgst_rate",
+   "fieldtype": "Float",
+   "label": "CGST Rate"
+  },
+  {
+   "fieldname": "cgst_amount",
+   "fieldtype": "Float",
+   "label": "CGST Amount"
+  },
+  {
+   "fieldname": "column_break_agiz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sgst_rate",
+   "fieldtype": "Float",
+   "label": "SGST Rate"
+  },
+  {
+   "fieldname": "sgst_amount",
+   "fieldtype": "Float",
+   "label": "SGST Amount"
+  },
+  {
+   "fieldname": "column_break_yjbz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cess_rate",
+   "fieldtype": "Float",
+   "label": "CESS Rate"
+  },
+  {
+   "fieldname": "cess_amount",
+   "fieldtype": "Float",
+   "label": "CESS Amount"
+  },
+  {
+   "fieldname": "column_break_yemk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cess_non_advol_rate",
+   "fieldtype": "Float",
+   "label": "CESS Non Advol Rate"
+  },
+  {
+   "fieldname": "cess_non_advol_amount",
+   "fieldtype": "Float",
+   "label": "CESS Non Advol Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:02:36.267214",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Job Work In Sales Order Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

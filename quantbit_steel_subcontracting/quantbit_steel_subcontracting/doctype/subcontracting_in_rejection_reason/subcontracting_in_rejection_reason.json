@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:36:04.387500",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "rejection_type",
+  "column_break_sndu",
+  "rejection_reason",
+  "rejection_quantity",
+  "is_subcontracting_product_mix"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "rejection_type",
+   "fieldtype": "Link",
+   "in_filter": 1,
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Rejection Type",
+   "options": "Subcontracting Rejection Type"
+  },
+  {
+   "fieldname": "column_break_sndu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Rejection Reason",
+   "options": "Subcontracting Rejection Reason"
+  },
+  {
+   "fieldname": "rejection_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rejection Quantity"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_subcontracting_product_mix",
+   "fieldtype": "Check",
+   "label": "Is Subcontracting Product Mix"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:36:15.210759",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting In Rejection Reason",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

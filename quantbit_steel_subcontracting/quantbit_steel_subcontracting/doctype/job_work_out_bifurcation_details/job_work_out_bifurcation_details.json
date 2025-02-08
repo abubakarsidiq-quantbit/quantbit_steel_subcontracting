@@ -1,0 +1,108 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:24:57.117092",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "job_work_in_challan",
+  "item_code",
+  "sales_order",
+  "types_of_goods",
+  "column_break_nxhb",
+  "job_work_in_quantity",
+  "item_name",
+  "jw_operation",
+  "column_break_sgba",
+  "returned_quantity",
+  "quantity",
+  "reference_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_work_in_challan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Job Work In Challan",
+   "options": "Job Work In"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "types_of_goods",
+   "fieldtype": "Select",
+   "label": "Types of Goods",
+   "options": "\nInput\nCapital Goods"
+  },
+  {
+   "fieldname": "column_break_nxhb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "job_work_in_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Job Work In Quantity"
+  },
+  {
+   "fetch_from": "raw_item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "jw_operation",
+   "fieldtype": "Link",
+   "label": "Job Work Operation",
+   "options": "Job Work Operations"
+  },
+  {
+   "fieldname": "column_break_sgba",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "returned_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Returned Quantity"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "reference_id",
+   "fieldtype": "Data",
+   "label": "Reference Id",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:25:07.918091",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Job Work Out Bifurcation Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

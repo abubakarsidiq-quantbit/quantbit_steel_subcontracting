@@ -1,0 +1,77 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-06 11:22:32.211864",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "raw_item_code",
+  "column_break_uwwl",
+  "raw_item_name",
+  "column_break_icde",
+  "subcontracting_operation",
+  "column_break_cwab",
+  "quantity"
+ ],
+ "fields": [
+  {
+   "fieldname": "raw_item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Raw Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_uwwl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "raw_item_code.item_name",
+   "fieldname": "raw_item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Raw Item Name"
+  },
+  {
+   "fieldname": "column_break_icde",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "subcontracting_operation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Subcontracting Operation",
+   "options": "Subcontracting Operations",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_cwab",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "non_negative": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-06 11:22:43.000019",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

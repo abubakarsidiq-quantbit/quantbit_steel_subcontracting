@@ -1,0 +1,476 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:SO-{####}",
+ "creation": "2025-02-05 11:57:32.627371",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "subcontracting_details_tab",
+  "column_break_ojca",
+  "supplier_id",
+  "supplier_name",
+  "column_break_zwls",
+  "posting_date",
+  "posting_time",
+  "column_break_cxkx",
+  "source_warehouse",
+  "target_warehouse",
+  "column_break_bhdi",
+  "company",
+  "subcontracting_type",
+  "out_type",
+  "section_break_rjfg",
+  "purchase_order",
+  "subcontracting_out_po_item_details",
+  "open_order",
+  "subcontracting_out_oo_item_details",
+  "taxes_and_charges_section",
+  "taxes_and_charges_template",
+  "subcontracting_out_taxes_and_charges",
+  "section_break_lsjk",
+  "column_break_gywk",
+  "column_break_twat",
+  "column_break_zigz",
+  "total_amount",
+  "rounded_adjustment",
+  "rounded_amount",
+  "address_details_tab",
+  "supplier_address_section",
+  "supplier_address",
+  "supplier_gstin",
+  "gst_category",
+  "place_of_supply",
+  "column_break_atdx",
+  "supplier_address_details",
+  "shipping_address_section",
+  "shipping_address",
+  "column_break_jpgp",
+  "shipping_address_details",
+  "company_address_section",
+  "company_address",
+  "company_gstin",
+  "company_state",
+  "column_break_njcj",
+  "company_address_details",
+  "more_details_tab",
+  "transporter_info_section",
+  "transporter",
+  "transporter_name",
+  "transport_receipt_no",
+  "transport_receipt_date",
+  "column_break_vyrr",
+  "gst_transporter_id",
+  "gst_vehicle_type",
+  "driver",
+  "driver_name",
+  "column_break_qjyl",
+  "mode_of_transport",
+  "vehicle_number",
+  "distance",
+  "section_break_zhtp",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Subcontracting Out",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "subcontracting_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Subcontracting Details"
+  },
+  {
+   "fieldname": "column_break_ojca",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier Id",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "supplier_id.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name"
+  },
+  {
+   "fieldname": "column_break_zwls",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "no_copy": 1
+  },
+  {
+   "default": "now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "column_break_cxkx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "source_warehouse",
+   "fieldtype": "Link",
+   "label": "Source Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fetch_from": "supplier_id.custom_subcontracting_warehouse",
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_bhdi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "subcontracting_type",
+   "fieldtype": "Select",
+   "label": "Subcontracting Type",
+   "options": "\nSEZ\nNon SEZ",
+   "read_only": 1
+  },
+  {
+   "default": "Purchase Order",
+   "fieldname": "out_type",
+   "fieldtype": "Select",
+   "label": "Out Type",
+   "options": "Purchase Order\nOpen Order"
+  },
+  {
+   "depends_on": "eval: doc.out_type != ''",
+   "fieldname": "section_break_rjfg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval: doc.out_type == \"Purchase Order\";",
+   "fieldname": "purchase_order",
+   "fieldtype": "Table MultiSelect",
+   "label": "Purchase Order",
+   "options": "Subcontracting Out Purchase Order"
+  },
+  {
+   "depends_on": "eval: doc.out_type == \"Purchase Order\";",
+   "fieldname": "subcontracting_out_po_item_details",
+   "fieldtype": "Table",
+   "label": "Subcontracting Out Purchase Order Item Details",
+   "options": "Subcontracting Out Purchase Order Item Details"
+  },
+  {
+   "depends_on": "eval: doc.out_type == \"Open Order\";",
+   "fieldname": "open_order",
+   "fieldtype": "Table MultiSelect",
+   "label": "Open Order",
+   "options": "Subcontracting Out Open Order"
+  },
+  {
+   "depends_on": "eval: doc.out_type == \"Open Order\";",
+   "fieldname": "subcontracting_out_oo_item_details",
+   "fieldtype": "Table",
+   "label": "Subcontracting Out Open Order Item Details",
+   "options": "Subcontracting Out Open Order Item Details"
+  },
+  {
+   "depends_on": "eval: doc.out_type != ''",
+   "fieldname": "taxes_and_charges_section",
+   "fieldtype": "Section Break",
+   "label": "Taxes And Charges"
+  },
+  {
+   "fieldname": "taxes_and_charges_template",
+   "fieldtype": "Link",
+   "label": "Taxes And Charges Template",
+   "options": "Purchase Taxes and Charges Template"
+  },
+  {
+   "fieldname": "subcontracting_out_taxes_and_charges",
+   "fieldtype": "Table",
+   "label": "Subcontracting Out Taxes And Charges",
+   "options": "Subcontracting Out Taxes And Charges"
+  },
+  {
+   "depends_on": "eval: doc.out_type != ''",
+   "fieldname": "section_break_lsjk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_gywk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_twat",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zigz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Total Amount",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rounded_adjustment",
+   "fieldtype": "Float",
+   "label": "Rounded Adjustment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rounded_amount",
+   "fieldtype": "Currency",
+   "label": "Rounded Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Address Details"
+  },
+  {
+   "fieldname": "supplier_address_section",
+   "fieldtype": "Section Break",
+   "label": "Supplier Address"
+  },
+  {
+   "fieldname": "supplier_address",
+   "fieldtype": "Link",
+   "label": "Supplier Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "supplier_address.gstin",
+   "fieldname": "supplier_gstin",
+   "fieldtype": "Data",
+   "label": "Supplier GSTIN"
+  },
+  {
+   "fetch_from": "supplier_address.gst_category",
+   "fieldname": "gst_category",
+   "fieldtype": "Data",
+   "label": "GST Category"
+  },
+  {
+   "fetch_from": "supplier_address.state",
+   "fieldname": "place_of_supply",
+   "fieldtype": "Data",
+   "label": "Place Of Supply"
+  },
+  {
+   "fieldname": "column_break_atdx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplier_address_details",
+   "fieldtype": "Text Editor",
+   "in_preview": 1,
+   "label": "Supplier Address Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_address_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Address"
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping Address",
+   "options": "Address"
+  },
+  {
+   "fieldname": "column_break_jpgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_address_details",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address Details"
+  },
+  {
+   "fieldname": "company_address_section",
+   "fieldtype": "Section Break",
+   "label": "Company Address"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Link",
+   "label": "Company Address",
+   "options": "Address"
+  },
+  {
+   "fetch_from": "company_address.gstin",
+   "fieldname": "company_gstin",
+   "fieldtype": "Data",
+   "label": "Company GSTIN"
+  },
+  {
+   "fetch_from": "company_address.gst_state",
+   "fieldname": "company_state",
+   "fieldtype": "Data",
+   "label": "Company State"
+  },
+  {
+   "fieldname": "column_break_njcj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_address_details",
+   "fieldtype": "Text Editor",
+   "in_preview": 1,
+   "label": "Company Address Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "more_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "More Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "transporter_info_section",
+   "fieldtype": "Section Break",
+   "label": "Transporter Info"
+  },
+  {
+   "fieldname": "transporter",
+   "fieldtype": "Link",
+   "label": "Transporter",
+   "link_filters": "[[\"Supplier\",\"is_transporter\",\"=\",1]]",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "transporter.supplier_name",
+   "fieldname": "transporter_name",
+   "fieldtype": "Data",
+   "label": "Transporter Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transport_receipt_no",
+   "fieldtype": "Data",
+   "label": "Transport Receipt No"
+  },
+  {
+   "fieldname": "transport_receipt_date",
+   "fieldtype": "Date",
+   "label": "Transport Receipt Date"
+  },
+  {
+   "fieldname": "column_break_vyrr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "transporter.gst_transporter_id",
+   "fieldname": "gst_transporter_id",
+   "fieldtype": "Data",
+   "label": "GST Transporter ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gst_vehicle_type",
+   "fieldtype": "Select",
+   "label": "GST Vehicle Type",
+   "options": "Regular\nOver Dimensional Cargo (ODC)"
+  },
+  {
+   "fieldname": "driver",
+   "fieldtype": "Link",
+   "label": "Driver",
+   "options": "Driver"
+  },
+  {
+   "fetch_from": "driver.full_name",
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "label": "Driver Name"
+  },
+  {
+   "fieldname": "column_break_qjyl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_transport",
+   "fieldtype": "Select",
+   "label": "Mode of Transport",
+   "options": "Road\nAir\nRail"
+  },
+  {
+   "fieldname": "vehicle_number",
+   "fieldtype": "Data",
+   "label": "Vehicle Number"
+  },
+  {
+   "fieldname": "distance",
+   "fieldtype": "Float",
+   "label": "Distance"
+  },
+  {
+   "fieldname": "section_break_zhtp",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Stock Entry",
+   "link_fieldname": "custom_subcontracting_out"
+  }
+ ],
+ "modified": "2025-02-06 12:16:41.370224",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting Out",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

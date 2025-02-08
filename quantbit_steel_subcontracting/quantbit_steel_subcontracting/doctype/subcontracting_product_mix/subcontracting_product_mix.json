@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 11:40:07.417142",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "finished_item_code",
+  "finished_item_name",
+  "column_break_bscu",
+  "default_uom",
+  "quantity",
+  "column_break_sxgv",
+  "company",
+  "date",
+  "disable",
+  "section_break_jmhe",
+  "raw_material_details",
+  "total_raw_material_quantity",
+  "section_break_bw1q",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Subcontracting Product Mix",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "finished_item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Finished Item Code",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "finished_item_code.item_name",
+   "fieldname": "finished_item_name",
+   "fieldtype": "Data",
+   "label": "Finished Item Name"
+  },
+  {
+   "fieldname": "column_break_bscu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "finished_item_code.stock_uom",
+   "fieldname": "default_uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Default UOM",
+   "options": "UOM",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_sxgv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Date",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disable",
+   "fieldtype": "Check",
+   "label": "Disable"
+  },
+  {
+   "fieldname": "section_break_jmhe",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "raw_material_details",
+   "fieldtype": "Table",
+   "label": "Raw Material Details",
+   "options": "Subcontracting Product Mix Raw Material Details"
+  },
+  {
+   "fieldname": "total_raw_material_quantity",
+   "fieldtype": "Float",
+   "label": "Total Raw Material Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_bw1q",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-02-05 11:40:20.282008",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting Product Mix",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

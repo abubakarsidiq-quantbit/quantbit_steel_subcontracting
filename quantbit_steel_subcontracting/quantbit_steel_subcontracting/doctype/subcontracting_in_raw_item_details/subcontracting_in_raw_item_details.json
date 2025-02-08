@@ -1,0 +1,66 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:36:51.595369",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "column_break_fwdi",
+  "item_name",
+  "column_break_sbgf",
+  "required_quantity",
+  "is_subcontracting_product_mix"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fieldname": "column_break_fwdi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "column_break_sbgf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "required_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Required Quantity"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_subcontracting_product_mix",
+   "fieldtype": "Check",
+   "label": "Is Subcontracting Product Mix",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:37:02.144937",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Subcontracting In Raw Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

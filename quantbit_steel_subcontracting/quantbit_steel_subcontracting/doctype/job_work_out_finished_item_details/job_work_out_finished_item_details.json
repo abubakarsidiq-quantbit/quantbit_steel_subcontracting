@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:09:13.722207",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "item_code",
+  "item_name",
+  "types_of_goods",
+  "column_break_xwwj",
+  "uom",
+  "weight_per_unit",
+  "column_break_fcjp",
+  "ok_qty",
+  "grade",
+  "is_pouring_bom"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Code",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "types_of_goods",
+   "fieldtype": "Select",
+   "label": "Types of Goods",
+   "options": "\nInput\nCapital Goods"
+  },
+  {
+   "fieldname": "column_break_xwwj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_code.weight_uom",
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Weight UOM",
+   "options": "UOM"
+  },
+  {
+   "fetch_from": "item_code.weight_per_unit",
+   "fetch_if_empty": 1,
+   "fieldname": "weight_per_unit",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight Per Unit"
+  },
+  {
+   "fieldname": "column_break_fcjp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ok_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "OK Qty"
+  },
+  {
+   "fieldname": "grade",
+   "fieldtype": "Link",
+   "label": "Grade",
+   "options": "Grade Master"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_pouring_bom",
+   "fieldtype": "Check",
+   "label": "Is Pouring BOM"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:13:20.149194",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Job Work Out Finished Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

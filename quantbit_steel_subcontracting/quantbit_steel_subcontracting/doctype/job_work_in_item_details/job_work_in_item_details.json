@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-05 12:16:10.924909",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "job_work_in_challan_date",
+  "jw_in_challan",
+  "sales_order",
+  "column_break_mblf",
+  "item_code",
+  "item_name",
+  "uom",
+  "column_break_zvfy",
+  "job_work_operation",
+  "job_work_in_quantity",
+  "weight_per_unit",
+  "column_break_acco",
+  "returned_quantity",
+  "available_quantity",
+  "refrence",
+  "check"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_work_in_challan_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Job Work In Challan Date"
+  },
+  {
+   "fieldname": "jw_in_challan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Job Work In Challan",
+   "options": "Job Work In",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_mblf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "item_code.item_name",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UOM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_zvfy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "job_work_operation",
+   "fieldtype": "Link",
+   "label": "Job Work Operation",
+   "options": "Job Work Operations",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_work_in_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Job Work In Quantity"
+  },
+  {
+   "fieldname": "weight_per_unit",
+   "fieldtype": "Float",
+   "label": "Weight Per Unit"
+  },
+  {
+   "fieldname": "column_break_acco",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "returned_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Returned Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "available_quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Available Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refrence",
+   "fieldtype": "Data",
+   "label": "refrence",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "check",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Check"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-05 12:16:29.714424",
+ "modified_by": "Administrator",
+ "module": "Quantbit Steel Subcontracting",
+ "name": "Job Work In Item Details",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
