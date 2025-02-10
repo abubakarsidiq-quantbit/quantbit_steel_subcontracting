@@ -6,3 +6,24 @@
 
 // 	},
 // });
+frappe.ui.form.on("Subcontracting Rejection Type", {
+	company(frm){
+        set_filters(frm, 'rejection_warehouse', 'None', [['Warehouse', 'company', '=', frm.doc.company]])
+    },
+});
+
+function set_filters(frm, DocTypeFieldName, DocTypeField, filters){
+    if(DocTypeField !== 'None'){
+        frm.set_query(DocTypeFieldName, DocTypeField, function(doc, cdt, cdn) {
+            return {
+                filters: filters
+            };
+        });
+    } else{
+        frm.set_query(DocTypeFieldName, function(doc) {
+            return {
+                filters: filters,
+            };
+        });
+    }
+}

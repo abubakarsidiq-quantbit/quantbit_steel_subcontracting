@@ -6,4 +6,5 @@ from frappe.model.document import Document
 
 
 class SubcontractingRejectionType(Document):
-	pass
+	def before_save(self):
+		self.subcontracting_field = f"{self.rejection_type_name.lower().replace(' ', '_')}_qty"

@@ -6,4 +6,5 @@ from frappe.model.document import Document
 
 
 class JobWorkRejectionType(Document):
-	pass
+	def before_save(self):
+		self.job_work_field = f"{self.rejection_type_name.lower().replace(' ', '_')}_qty"
