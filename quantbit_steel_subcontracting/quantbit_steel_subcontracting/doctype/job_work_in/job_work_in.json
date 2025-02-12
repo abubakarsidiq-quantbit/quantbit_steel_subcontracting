@@ -1,4 +1,5 @@
 {
+ "_liked_by": "[\"Administrator\"]",
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:JWI-{####}",
@@ -21,6 +22,11 @@
   "job_work_type",
   "section_break_rjfg",
   "sales_order",
+  "column_break_gmqg",
+  "is_opening",
+  "column_break_j4h4",
+  "reference_challan",
+  "section_break_toub",
   "jwi_so_item_details",
   "taxes_and_charges_section",
   "taxes_and_charges_template",
@@ -407,6 +413,30 @@
    "label": "Subcontracting Out",
    "options": "Subcontracting Out",
    "read_only": 1
+  },
+  {
+   "fieldname": "column_break_gmqg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_opening",
+   "fieldtype": "Select",
+   "label": "Is Opening",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_j4h4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.is_opening == \"Yes\"",
+   "fieldname": "reference_challan",
+   "fieldtype": "Data",
+   "label": "Reference Challan Number"
+  },
+  {
+   "fieldname": "section_break_toub",
+   "fieldtype": "Section Break"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -417,7 +447,7 @@
    "link_fieldname": "custom_job_work_in"
   }
  ],
- "modified": "2025-02-06 12:34:55.938706",
+ "modified": "2025-02-12 17:04:08.760974",
  "modified_by": "Administrator",
  "module": "Quantbit Steel Subcontracting",
  "name": "Job Work In",

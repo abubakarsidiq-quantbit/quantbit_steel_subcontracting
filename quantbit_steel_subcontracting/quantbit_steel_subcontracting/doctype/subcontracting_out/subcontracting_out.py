@@ -47,10 +47,11 @@ def get_item_name(item_code):
 class SubcontractingOut(Document):
 
 	def on_submit(self):
-		if self.out_type == "Purchase Order":
-			self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_po_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
-		elif self.out_type == "Open Order":
-			self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_oo_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
+		if self.is_opening == "No":
+			if self.out_type == "Purchase Order":
+				self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_po_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
+			elif self.out_type == "Open Order":
+				self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_oo_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
 
 		self.make_job_work_in()
 		self.update_on_purchase_order()
