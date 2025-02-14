@@ -47,16 +47,17 @@ def get_item_name(item_code):
 class SubcontractingOut(Document):
 
 	def on_submit(self):
-		if self.out_type == "Purchase Order":
-			self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_po_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
-		elif self.out_type == "Open Order":
-			self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_oo_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
+		if self.is_opening == "No":
+			if self.out_type == "Purchase Order":
+				self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_po_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
+			elif self.out_type == "Open Order":
+				self.make_stock_entry("Subcontracting Out Send to Subcontractor","subcontracting_out_oo_item_details",self.company, self.target_warehouse, self.supplier_address, self.company_address)
 
 		self.make_job_work_in()
 		self.update_on_purchase_order()
 
 	def make_job_work_in(self):
-		if frappe.db.exists("Supplier", self.supplier_id,'is_internal_supplier'):
+		if frappe.get_value("Supplier", self.supplier_id,'is_internal_supplier'):
 			if self.company in frappe.get_all("Allowed To Transact With", filters={'parent': self.supplier_id}, pluck='company'):
 				comp = frappe.get_value("Supplier", self.supplier_id, 'represents_company')
 				customer = frappe.get_value("Customer",filters={'represents_company': self.company},fieldname='name')
@@ -78,7 +79,7 @@ class SubcontractingOut(Document):
 					if not jwi_warehouse:
 						frappe.throw(f"Set Job Work In Target Warehouse At Job Work Settings For {comp}")
 					if po.subcontracting_operation:
-						job_work_operation = frappe.db.exists("Job Work Operations",po.subcontracting_operation)
+						job_work_operation = frappe.get_value("Job Work Operations",po.subcontracting_operation)
 						if not job_work_operation:
 							frappe.throw(f"Create {po.subcontracting_operation} Operation in Job Work Opertation")
 						

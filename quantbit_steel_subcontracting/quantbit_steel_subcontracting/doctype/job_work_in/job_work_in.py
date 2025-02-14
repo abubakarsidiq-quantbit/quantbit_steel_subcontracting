@@ -22,7 +22,8 @@ def get_default_address(Doctype, Name):
 
 class JobWorkIn(Document):
 	def on_submit(self):
-		self.make_stock_entry("Job Work In Receipt", 'jwi_so_item_details', self.company, self.target_warehouse)
+		if self.is_opening == "No":
+			self.make_stock_entry("Job Work In Receipt", 'jwi_so_item_details', self.company, self.target_warehouse)
 		self.update_sales_order()
 
 	def make_stock_entry(self, type, table, company, target_warehouse):

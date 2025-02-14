@@ -140,7 +140,7 @@ class JobWorkOut(Document):
 		for i in self.job_work_out_bifurcation_details:
 			returned_quantity = frappe.db.get_value("Job Work In Sales Order Item Details", {'name': i.reference_id}, 'returned_quantity')
 			frappe.db.set_value("Job Work In Sales Order Item Details", {'name': i.reference_id}, 'returned_quantity', returned_quantity + i.quantity)
-		if frappe.db.exists("Customer", self.customer,'is_internal_customer'):
+		if frappe.get_value("Customer", self.customer,'is_internal_customer'):
 			if self.company in frappe.get_all("Allowed To Transact With", filters={'parent': self.customer}, pluck='company'):
 				comp = frappe.get_value("Customer", self.customer, 'represents_company')
 				supplier = frappe.get_value("Supplier",filters={'represents_company': self.company},fieldname='name')
