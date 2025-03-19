@@ -10,9 +10,11 @@
   "column_break_ojca",
   "supplier_id",
   "supplier_name",
+  "is_opening",
   "column_break_zwls",
   "posting_date",
   "posting_time",
+  "reference_challan",
   "column_break_cxkx",
   "source_warehouse",
   "target_warehouse",
@@ -23,9 +25,6 @@
   "section_break_rjfg",
   "purchase_order",
   "column_break_t73p",
-  "is_opening",
-  "column_break_g7w8",
-  "reference_challan",
   "section_break_dswg",
   "subcontracting_out_po_item_details",
   "open_order",
@@ -460,10 +459,6 @@
    "fieldtype": "Section Break"
   },
   {
-   "fieldname": "column_break_g7w8",
-   "fieldtype": "Column Break"
-  },
-  {
    "depends_on": "eval:doc.is_opening == \"Yes\"",
    "fieldname": "reference_challan",
    "fieldtype": "Data",
@@ -478,7 +473,7 @@
    "link_fieldname": "custom_subcontracting_out"
   }
  ],
- "modified": "2025-02-10 15:29:34.514643",
+ "modified": "2025-03-19 10:50:19.496971",
  "modified_by": "Administrator",
  "module": "Quantbit Steel Subcontracting",
  "name": "Subcontracting Out",

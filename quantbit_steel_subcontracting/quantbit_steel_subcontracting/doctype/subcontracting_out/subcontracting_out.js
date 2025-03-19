@@ -15,7 +15,6 @@ frappe.ui.form.on("Subcontracting Out", {
         get_address(frm, "Company", frm.doc.company, 'company_address', 'company_address_details');
 	},
     async supplier_id(frm) {
-        // set_filters(frm, 'purchase_order', 'None',[['Purchase Order', 'supplier', '=', frm.doc.supplier_id],['Purchase Order', 'custom_subcontracting_done', '=', 0], ['Purchase Order', 'custom_is_subcontracting', '=', 1],['Purchase Order', 'company', '=', frm.doc.company]])
         set_filters(frm, 'open_order', 'None', [['Open Order', 'supplier_id', '=', frm.doc.supplier_id]])
         get_address(frm, "Supplier", frm.doc.supplier_id, 'supplier_address', 'supplier_address_details');
         await frm.call({
@@ -34,7 +33,6 @@ frappe.ui.form.on("Subcontracting Out", {
         set_source_warehouse_in_child_table(frm, 'subcontracting_out_oo_item_details');
     },
     purchase_order(frm){
-        // set_filters(frm, 'purchase_order', 'None',[['Purchase Order', 'supplier', '=', frm.doc.supplier_id],['Purchase Order', 'custom_subcontracting_done', '=', 0], ['Purchase Order', 'custom_is_subcontracting', '=', 1],['Purchase Order', 'company', '=', frm.doc.company]])
         set_filters(frm, 'purchase_order', 'None',[['Purchase Order', 'name', 'in', purchase_orders]])
         if (frm.doc.source_warehouse && frm.doc.purchase_order) {
             get_purchase_order_items_details(frm, "Purchase Order", 'purchase_order','subcontracting_out_po_item_details')
@@ -135,6 +133,21 @@ frappe.ui.form.on("Subcontracting Out Open Order Item Details", {
         }
     }
 });
+
+frappe.ui.form.on('Subcontracting Out Open Order Item Details', {
+    quantity(frm, cdt, cdn){
+        var row = locals[cdt][cdn];
+        if(row.quantity && row.rate){
+            frappe.model.set_value(cdt, cdn, 'amount', row.quantity * row.rate)
+        }
+    },
+    rate(frm, cdt, cdn){
+        var row = locals[cdt][cdn];
+        if(row.quantity && row.rate){
+            frappe.model.set_value(cdt, cdn, 'amount', row.quantity * row.rate)
+        }
+    }
+})
 
 function set_source_warehouse_in_child_table(frm, table_name) {
     frm.doc[table_name].forEach(function(row) {

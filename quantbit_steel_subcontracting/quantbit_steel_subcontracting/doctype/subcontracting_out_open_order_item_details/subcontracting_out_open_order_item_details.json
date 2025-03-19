@@ -15,15 +15,19 @@
   "uom",
   "column_break_zywf",
   "quantity",
-  "returned_quantity",
   "rate",
+  "returned_quantity",
   "column_break_rkrp",
   "source_warehouse",
-  "available_quantity",
   "amount",
+  "available_quantity",
   "raw_item_description_section",
   "tem_description",
   "hsnsac",
+  "gst_details_section",
+  "item_tax_template",
+  "column_break_dkes",
+  "gst_rate",
   "raw_item_gst_details_section",
   "igst_rate",
   "igst_amount",
@@ -114,7 +118,8 @@
   {
    "fieldname": "rate",
    "fieldtype": "Float",
-   "label": "Rate"
+   "label": "Rate",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_rkrp",
@@ -138,7 +143,8 @@
   {
    "fieldname": "amount",
    "fieldtype": "Float",
-   "label": "Amount"
+   "label": "Amount",
+   "read_only": 1
   },
   {
    "collapsible": 1,
@@ -162,8 +168,7 @@
   {
    "collapsible": 1,
    "fieldname": "raw_item_gst_details_section",
-   "fieldtype": "Section Break",
-   "label": "Raw Item GST Details"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "igst_rate",
@@ -230,12 +235,34 @@
    "fieldname": "cess_non_advol_amount",
    "fieldtype": "Float",
    "label": "CESS Non Advol Amount"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "gst_details_section",
+   "fieldtype": "Section Break",
+   "label": "GST Details"
+  },
+  {
+   "fieldname": "item_tax_template",
+   "fieldtype": "Link",
+   "label": "Item Tax Template",
+   "options": "Item Tax Template"
+  },
+  {
+   "fieldname": "column_break_dkes",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "item_tax_template.gst_rate",
+   "fieldname": "gst_rate",
+   "fieldtype": "Float",
+   "label": "GST Rate"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-05 11:45:56.008244",
+ "modified": "2025-03-19 12:17:03.296173",
  "modified_by": "Administrator",
  "module": "Quantbit Steel Subcontracting",
  "name": "Subcontracting Out Open Order Item Details",

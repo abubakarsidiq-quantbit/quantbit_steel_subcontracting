@@ -105,7 +105,7 @@
    "options": "UOM"
   },
   {
-   "fetch_from": "item_code.weight_per_unit",
+   "fetch_from": "item_code.custom_finished_good_casting_weight",
    "fieldname": "weight_per_unit",
    "fieldtype": "Float",
    "label": "Weight Per Unit"

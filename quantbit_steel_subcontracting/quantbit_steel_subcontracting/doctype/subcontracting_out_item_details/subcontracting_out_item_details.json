@@ -25,6 +25,7 @@
  ],
  "fields": [
   {
+   "columns": 2,
    "fieldname": "subcontracting_out_challan",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -51,6 +52,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "columns": 2,
    "fieldname": "item_code",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -59,6 +61,7 @@
    "read_only": 1
   },
   {
+   "columns": 2,
    "fetch_from": "item_code.item_name",
    "fieldname": "item_name",
    "fieldtype": "Data",
@@ -77,13 +80,16 @@
    "fieldtype": "Column Break"
   },
   {
+   "columns": 1,
    "fieldname": "subcontracting_operation",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Subcontracting Operation",
    "options": "Subcontracting Operations",
    "read_only": 1
   },
   {
+   "columns": 1,
    "fieldname": "subcontracting_out_quantity",
    "fieldtype": "Float",
    "in_list_view": 1,
@@ -103,11 +109,11 @@
   {
    "fieldname": "available_quantity",
    "fieldtype": "Float",
-   "in_list_view": 1,
    "label": "Available Quantity",
    "read_only": 1
   },
   {
+   "columns": 1,
    "fieldname": "returned_quantity",
    "fieldtype": "Float",
    "in_list_view": 1,
@@ -122,6 +128,7 @@
    "read_only": 1
   },
   {
+   "columns": 1,
    "default": "0",
    "fieldname": "check",
    "fieldtype": "Check",
@@ -134,7 +141,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-05 12:34:15.870205",
+ "modified": "2025-03-19 12:22:13.513676",
  "modified_by": "Administrator",
  "module": "Quantbit Steel Subcontracting",
  "name": "Subcontracting Out Item Details",

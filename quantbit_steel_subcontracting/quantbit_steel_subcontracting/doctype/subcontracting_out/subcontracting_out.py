@@ -140,15 +140,21 @@ class SubcontractingOut(Document):
 
 	def set_gst_itc_4_rate(self):
 		for out in self.get('subcontracting_out_po_item_details', filters={'quantity': ['>', 0]}):
-			if out.rate <= 0 and out.item_code:
-				itc_rate = frappe.get_value("Item", out.item_code, 'custom_itc_rate')
-				out.rate = itc_rate
-				out.amount = out.quantity * itc_rate
+			if out.item_code:
+				applicable = frappe.get_value("Item", out.item_code, 'custom_itc_rate_applicable')
+				if applicable:
+					itc_rate = frappe.get_value("Item", out.item_code, 'custom_itc_rate')
+					out.rate = itc_rate
+					out.amount = out.quantity * itc_rate
 
 	def get_gst_calculation(self):
+		if self.out_type == "Purchase Order":
+			table = 'subcontracting_out_po_item_details'
+		elif self.out_type == "Open Order":
+			table = 'subcontracting_out_oo_item_details'
 		tot_amount = 0
 		tot_taxable_amount = 0
-		for out in self.get('subcontracting_out_po_item_details', filters={'amount':['!=', None]}):
+		for out in self.get(table, filters={'amount':['!=', None]}):
 			tot_amount += out.amount
 			item = frappe.get_doc("Item", out.item_code)
 			for tax in item.taxes:
@@ -166,7 +172,7 @@ class SubcontractingOut(Document):
 						out.igst_rate = gst_rate
 						out.gst_amount = (out.amount / 100) * gst_rate
 					break
-		for out in self.get('subcontracting_out_po_item_details'):
+		for out in self.get(table):
 			tot_taxable_amount += (out.igst_amount or 0) + (out.cgst_amount or 0) + (out.sgst_amount or 0)
 
 		if self.place_of_supply == self.company_state:
@@ -236,19 +242,14 @@ class SubcontractingOut(Document):
 				self.append(Table,{
 					'out_type': out_type.get(FieldName),
 					'order_item': itm.get('item_code'),
-					'item_code': itm.get('fg_item'),
-					'item_name': frappe.get_value('Item', filters={'name': itm.get('fg_item')}, fieldname='item_name'),
-					'quantity': itm.get('fg_item_qty'),
 					'uom': itm.get('uom'),
-    				'subcontracting_operation': itm.get('custom_subcontracting_operation'),
+    				'subcontracting_operation': itm.get('subcontracting_operation'),
 					'source_warehouse': self.get('source_warehouse'),
 					'available_quantity': stock_balance(itm.get('fg_item'),self.source_warehouse,self.posting_date, self.posting_time) if (self.source_warehouse and itm.get('fg_item')) else 0,
 					'rate': itm.get('rate'),
-					'amount': itm.get('rate') * itm.get('fg_item_qty'),
 					'subcontracting_product_mix': subcontracting_product_mix if subcontracting_product_mix else None,
 					'type_of_goods': "Capital Goods" if frappe.db.get_value('Item', itm.get('fg_item'), 'is_fixed_asset') else 'Input',
 				})
-
 
 	@frappe.whitelist()
 	def get_purchase_order_items_details(self, Doctype, FieldName, Table):
