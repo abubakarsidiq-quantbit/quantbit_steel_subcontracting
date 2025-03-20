@@ -28,7 +28,7 @@ class SubcontractingIn(Document):
 				returned_quantity = frappe.db.get_value("Subcontracting Out Purchase Order Item Details", {'parent': i.subcontracting_out_challan, 'item_code': i.item_code, 'out_type': i.purchase_order}, 'returned_quantity')
 				frappe.db.set_value("Subcontracting Out Purchase Order Item Details", {'parent': i.subcontracting_out_challan, 'item_code': i.item_code, 'out_type': i.purchase_order}, 'returned_quantity', returned_quantity - i.quantity)
 			else:
-				returned_quantity = frappe.db.get_value("Subcontracting Out Purchase Order Item Details", {'parent': i.subcontracting_out_challan, 'item_code': i.item_code}, 'returned_quantity')
+				returned_quantity = frappe.get_value("Subcontracting Out Open Order Item Details", {'parent': i.subcontracting_out_challan, 'item_code': i.item_code}, 'returned_quantity')
 				frappe.db.set_value("Subcontracting Out Purchase Order Item Details", {'parent': i.subcontracting_out_challan, 'item_code': i.item_code}, 'returned_quantity', returned_quantity - i.quantity)
 
 	

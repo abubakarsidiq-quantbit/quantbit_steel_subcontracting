@@ -235,12 +235,6 @@ fixtures = [
         ],
     },
     {
-        "doctype": "Subcontracting Rejection Type",
-        "filters": [
-            ["name", "in", ["SRT001","SRT002","SRT003","SRT004","SRT005","SRT006","SRT007","SRT008","SRT009","SRT010","SRT011","SRT012","SRT013","SRT014","SRT015","SRT016"]],
-        ],
-    },
-    {
         "doctype": "Server Script",
         "filters": [
             ["name", "in", ["Add Default BOM", "Sales Order Filters"]],
